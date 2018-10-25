@@ -1,0 +1,73 @@
+{% extends 'login.html' %}
+
+{% block title %}
+    注册会员
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/register.js"></script>
+{% endblock %}
+
+{% block link %}
+    <a href="/login">会员登录</a>
+{% endblock %}
+
+{% block form %}
+    <form action="/register/" method="post" id="formRegister">
+    {% csrf_token %}
+        <p>
+            <span class="spanText">手机号</span>
+            <input type="text" name="uphone" class="uText">
+            <br>
+            <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <span id="showphone"></span>
+        </p>
+        <p>
+            <span class="spanText">密码</span>
+            <input type="password" name="upwd" class="uText">
+            <br>
+            <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+            <span id="showupwd"></span>
+        </p>
+        <p>
+            <span class="spanText">确认密码</span>
+            <input type="password" id="cpwd" class="uText">
+            <br>
+            <span id="showcpwd"></span>
+        </p>
+        <p>
+            <span class="spanText">用户名</span>
+            <input type="text" name="uname" class="uText">
+            <br>
+            <span id="showuname"></span>
+        </p>
+        <p>
+            <span class="spanText">邮箱</span>
+            <input type="email" name="uemail" class="uText">
+            <br>
+            <span id="showuemail"></span>
+        </p>
+        <p>
+            <span class="spanText"></span>
+            <input type="submit" name="login" class="login" value="注册">
+            <input type="button" name="regist" class="regist" value="会员登录" onclick="location.href='/login'">
+        </p>
+    </form>
+{% endblock %}
+
+{% block style %}
+    <style>
+        .right{
+            margin-top:20px;
+        }
+    </style>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
